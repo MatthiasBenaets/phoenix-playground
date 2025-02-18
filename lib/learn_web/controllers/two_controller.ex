@@ -7,7 +7,8 @@ defmodule LearnWeb.TwoController do
   """
   use LearnWeb, :controller
 
+  # By specifying :two, it will use the `two.html.heex` template
   def home(conn, _params) do
-    render(conn, :home)
+    render(conn, :two)
   end
 end

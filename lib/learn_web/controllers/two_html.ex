@@ -6,5 +6,6 @@ defmodule LearnWeb.TwoHTML do
   """
   use LearnWeb, :html
 
-  embed_templates "page_html/*"
+  # Will search for ./two_html/two.html.heex
+  embed_templates "two_html/*"
 end
