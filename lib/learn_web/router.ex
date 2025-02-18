@@ -22,6 +22,7 @@ defmodule LearnWeb.Router do
     get "/one", PageController, :one
     get "/two", TwoController, :home
     live "/three", ThreeLive
+    live "/four", FourLive
   end
 
   # Other scopes may use custom stacks.
