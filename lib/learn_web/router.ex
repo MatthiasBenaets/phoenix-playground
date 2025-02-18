@@ -21,6 +21,7 @@ defmodule LearnWeb.Router do
     # new pages (routes) are added here
     get "/one", PageController, :one
     get "/two", TwoController, :home
+    live "/three", ThreeLive
   end
 
   # Other scopes may use custom stacks.
