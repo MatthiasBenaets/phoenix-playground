@@ -26,6 +26,7 @@ defmodule LearnWeb.Router do
     get "/five", FiveController, :home
     get "/five/:id", FiveController, :number
     live "/six", SixLive
+    live "/light", LightLive
   end
 
   # Other scopes may use custom stacks.
