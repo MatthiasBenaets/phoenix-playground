@@ -18,6 +18,8 @@ defmodule LearnWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    # new pages (routes) are added here
+    get "/one", PageController, :one
   end
 
   # Other scopes may use custom stacks.
