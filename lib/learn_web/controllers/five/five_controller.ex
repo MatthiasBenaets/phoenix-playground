@@ -1,9 +1,15 @@
 defmodule LearnWeb.FiveController do
   use LearnWeb, :controller
 
+  @variables [
+    %{nr: "1", obj: "object 1"},
+    %{nr: "2", obj: "object 2"},
+    %{nr: "3", obj: "object 3"}
+  ]
+
   # function for route /five
   def home(conn, _params) do
-    render(conn, :five)
+    render(conn, :five, variables: @variables)
   end
 
   # function for route /five/:id

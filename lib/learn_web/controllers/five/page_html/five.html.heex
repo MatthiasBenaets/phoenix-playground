@@ -1,1 +1,15 @@
 <h1>Page 5</h1>
+
+<!-- loop over variables and show them -->
+<div>
+  <span :for={var <- @variables} class="flex flex-col">
+    <span>variable {var.nr}: {var.obj}</span>
+  </span>
+</div>
+
+<!-- loop over variable but only show variable with `nr` < 2 -->
+<div>
+  <span :for={var <- @variables} class="flex flex-col">
+    <span :if={String.to_integer(var.nr) < 2}>variable {var.nr}: {var.obj}</span>
+  </span>
+</div>
