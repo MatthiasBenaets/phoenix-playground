@@ -17,7 +17,8 @@ defmodule Learn.Application do
       # Start a worker by calling: Learn.Worker.start_link(arg)
       # {Learn.Worker, arg},
       # Start to serve requests, typically the last entry
-      LearnWeb.Endpoint
+      LearnWeb.Endpoint,
+      LearnWeb.Presence
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

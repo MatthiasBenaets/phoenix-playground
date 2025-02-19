@@ -79,3 +79,12 @@ To insert data via the iex shell, you can run:
 - you can also first check if it is valid using the changeset: `product = Product.changeset(%Product{}, %{name: :foo, price: 1.99, serial: "1235"})`
 
 [Ecto Query cheat sheet](https://hexdocs.pm/ecto/3.10.1/crud.html)
+
+## Presence
+
+To enable presence, run `mix phx.gen.presence`.\
+In [lib/learn/application.ex](lib/learn/applications), add `LearnWeb.presence` to the children.\
+The command will create a channels directory inside learn_web by default.
+
+To track presence, it's ideal to track a topic and have a key.\
+More information about how to set it up, have a look at the comments in [lib/learn_web/live/pres_live.ex](lib/learn_web/live/pres_live.ex).
