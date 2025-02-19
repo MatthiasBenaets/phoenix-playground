@@ -76,6 +76,6 @@ To insert data via the iex shell, you can run:
 
 - create new product: `product = %Product{name: :foo, price: 1.99, serial: "1234"}`
 - insert it table products: `Repo.insert(product)`
-- you can also first check if it is valid using the chainset: `product = Product.changeset(%Product{}, %{name: :foo, price: 1.99, serial: "1235"})`
+- you can also first check if it is valid using the changeset: `product = Product.changeset(%Product{}, %{name: :foo, price: 1.99, serial: "1235"})`
 
 [Ecto Query cheat sheet](https://hexdocs.pm/ecto/3.10.1/crud.html)
