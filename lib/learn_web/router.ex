@@ -1,6 +1,8 @@
 defmodule LearnWeb.Router do
   use LearnWeb, :router
 
+  alias LearnWeb.Plugs
+
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
@@ -8,6 +10,7 @@ defmodule LearnWeb.Router do
     plug :put_root_layout, html: {LearnWeb.Layouts, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug Plugs.SetCookie, 1
   end
 
   pipeline :api do
