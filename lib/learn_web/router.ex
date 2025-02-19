@@ -35,6 +35,7 @@ defmodule LearnWeb.Router do
     live "/pubsub", PubsubLive
     live "/chat", ChatLive
     live "/twelve", TwelveLive
+    live "/sveltechat", SveltechatLive
   end
 
   # Other scopes may use custom stacks.
