@@ -42,3 +42,29 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 ## Directory Structure
 
 [hexdocs](https://hexdocs.pm/phoenix/directory_structure.html)
+
+## Database
+
+Before interacting with the database, we need to set it up.\
+This can be done by generating a migration file.
+
+To see, what needs to happen to the database, look in [priv/repo/migrations](/priv/repo/migrations).\
+These are the actions that will be executed on the database.\
+These are used to create, update, delete table, etc.
+
+Phoenix makes it easy for us, you just need use a generator.\
+You can find all [here](https://hexdocs.pm/phoenix/Mix.Tasks.Phx.Gen.html).
+
+Since we want to have a schema and create a migration ([info](https://hexdocs.pm/phoenix/Mix.Tasks.Phx.Gen.Schema.html)):
+
+- Run `mix phx.gen.schema Product products price:float serial:unique name:enum:foo:bar:baz`
+- This creates a `Product` schema, for the `products` table, which has a column `price` of type `float`, a column `serial` which is `unique`, mean values in this column can only exist once, and a column `name` which is a list (enum) where the value can only be one of the listed.
+- If you want to reference another table, you can use the reference another table.
+
+After running the command 2 files will be created:
+
+- `/lib/learn/product.ex`: schema that can be used throughout the codebase. It also uses changeset to validate the data before it is inserted into the db.
+- `/priv/repo/migrations/<date>_create_products.exs`: specifies what needs to be done on the database.
+
+Afterwards run `mix ecto.migrate`, to run the migration.\
+This will create the table and set everything up.
