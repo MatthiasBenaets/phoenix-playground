@@ -68,3 +68,14 @@ After running the command 2 files will be created:
 
 Afterwards run `mix ecto.migrate`, to run the migration.\
 This will create the table and set everything up.
+
+To interact with the database we use `Learn.Repo` which is in [lib/learn/repo.ex](lib/learn/repo.ex).
+You can query the database table in the shell by running `Learn.Repo.all(Shop.Product)`. It's also possible to `alias Learn.Repo` and `alias Learn.Product` so you can just run `Repo.all(Product)`. These aliases can also just be stored and set up globally inside [.iex.exs](.iex.exs).
+
+To insert data via the iex shell, you can run:
+
+- create new product: `product = %Product{name: :foo, price: 1.99, serial: "1234"}`
+- insert it table products: `Repo.insert(product)`
+- you can also first check if it is valid using the chainset: `product = Product.changeset(%Product{}, %{name: :foo, price: 1.99, serial: "1235"})`
+
+[Ecto Query cheat sheet](https://hexdocs.pm/ecto/3.10.1/crud.html)

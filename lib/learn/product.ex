@@ -40,10 +40,10 @@ defmodule Learn.Product do
   defp format(changeset) do
     # get name from changeset and trim for trailing whitespace
     new_name =
-      changeset.changes.name
+      changeset.changes.serial
       |> String.trim()
 
     # ecto function to edit changes
-    put_change(changeset, :name, new_name)
+    put_change(changeset, :serial, new_name)
   end
 end
