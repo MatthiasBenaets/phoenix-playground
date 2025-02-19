@@ -18,7 +18,8 @@ defmodule Learn.Application do
       # {Learn.Worker, arg},
       # Start to serve requests, typically the last entry
       LearnWeb.Endpoint,
-      LearnWeb.Presence
+      LearnWeb.Presence,
+      Learn.Counter
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
