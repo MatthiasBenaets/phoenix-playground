@@ -49,5 +49,16 @@ defmodule LearnWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
+  # will show the secret when on localhost:4000?secret="secret"
+  # so when param "secret" found via pattern match %{"secret" => "secret"} is secret
+  plug :secret
   plug LearnWeb.Router
+
+  def secret(%Plug.Conn{:params => %{"secret" => "secret"}} = conn, _opts) do
+    assign(conn, :secret, true)
+  end
+
+  def secret(%Plug.Conn{} = conn, _opts) do
+    assign(conn, :secret, false)
+  end
 end
