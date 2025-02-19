@@ -33,6 +33,7 @@ defmodule LearnWeb.Router do
     live "/data", DataLive
     live "/pres", PresLive
     live "/pubsub", PubsubLive
+    live "/chat", ChatLive
   end
 
   # Other scopes may use custom stacks.
