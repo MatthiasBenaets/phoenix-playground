@@ -8,6 +8,7 @@ defmodule Learn.Application do
   @impl true
   def start(_type, _args) do
     children = [
+      {NodeJS.Supervisor, [path: LiveSvelte.SSR.NodeJS.server_path(), pool_size: 4]},
       LearnWeb.Telemetry,
       Learn.Repo,
       {DNSCluster, query: Application.get_env(:learn, :dns_cluster_query) || :ignore},

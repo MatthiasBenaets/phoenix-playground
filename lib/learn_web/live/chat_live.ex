@@ -14,7 +14,7 @@ defmodule LearnWeb.ChatLive do
         <input type="text" placeholder="Name" name="name" autofocus autocomplete="name" />
         <button class="py-2 px-2 bg-black text-white">Join</button>
       </form>
-
+      
     <!-- when user give a name, load chat -->
       <div :if={@name} class="flex flex-col">
         <!-- load all messages, only loads the messages from user's side, messages not kept by agent -->
@@ -33,7 +33,7 @@ defmodule LearnWeb.ChatLive do
             </div>
           </div>
         </div>
-
+        
     <!-- submit message, use handle_event send message -->
         <form phx-submit="send_message">
           <input

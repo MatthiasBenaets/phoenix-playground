@@ -55,6 +55,8 @@ defmodule LearnWeb do
       use Phoenix.LiveView,
         layout: {LearnWeb.Layouts, :app}
 
+      import LiveSvelte
+
       unquote(html_helpers())
     end
   end
@@ -95,6 +97,8 @@ defmodule LearnWeb do
 
       # Routes generation with the ~p sigil
       unquote(verified_routes())
+
+      import LiveSvelte
     end
   end
 

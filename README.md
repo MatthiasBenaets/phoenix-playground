@@ -88,3 +88,7 @@ The command will create a channels directory inside learn_web by default.
 
 To track presence, it's ideal to track a topic and have a key.\
 More information about how to set it up, have a look at the comments in [lib/learn_web/live/pres_live.ex](lib/learn_web/live/pres_live.ex).
+
+## LiveSvelte
+
+[github](https://github.com/woutdp/live_svelte)
