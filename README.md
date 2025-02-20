@@ -92,3 +92,29 @@ More information about how to set it up, have a look at the comments in [lib/lea
 ## LiveSvelte
 
 [github](https://github.com/woutdp/live_svelte)
+
+## Authentication
+
+[hexdocs](https://hexdocs.pm/phoenix/mix_phx_gen_auth.html)
+
+The command below will generate all required authentication code.
+`Users` is the context (to interact with backend), `User` is the schema, and `users` is the (db) table.
+
+- run `mix phx.gen.auth Users User users`
+
+This will generate all the components, live views, migration files, etc.
+Afterwards run `mix deps.get` and since we need to set up the database for this new data, also run `mix ecto.migrate`.
+
+I sometimes might error out while compiling bcypt.\
+Just remove the `_build` and `deps` directory. Restart the terminal, and run both commands again.
+
+So the new files and edits:
+
+- `lib/learn/users`: user and user_token schema from database. Documentation for all functions will be in these files.
+- `lib/learn/users.ex`: functions to interact with database
+- `lib/learn_web/components/layouts/root.html.heex`: a head to navigate for user login/registration
+- `lib/learn_web/controllers/user_session_controller.ex`: login, user creation
+- `lib/learn_web/live/`: all new liveviews required for authentication
+
+After registration, you can also test the email (see router.ex).\
+via [localhost:4000/dev/mailbox](http://localhost:4000/dev/mailbox) you can see what mails have been send, and a user can be confirmed.
